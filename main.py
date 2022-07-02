@@ -15,7 +15,7 @@ if __name__ == "__main__":
     app_id = parse_args[1]
     token = parse_args[2]
 
-    page = f'https://api.vk.com/method/friends.get?fields=country&fields=city&order=name&access_token={token}&v=5.131'
+    page = f'https://api.vk.com/method/friends.get?fields=country&fields=city&order=name&access_token={token[0]}&v=5.131'
     req = requests.get(page).json()
     for e in req['response']['items']:
         print(e['first_name'], e['last_name'])
